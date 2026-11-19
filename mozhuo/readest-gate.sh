@@ -1,5 +1,5 @@
 #!/bin/bash
-# KPW6-AOSP builder：编 Readest 墨卓限制的两个类（kcompat.G / kcompat.N）成 dex，放 local/tmp/readest-gate/gate.dex
+# KPW6-OREO builder：编 Readest 墨卓限制的两个类（kcompat.G / kcompat.N）成 dex，放 local/tmp/readest-gate/gate.dex
 set -e
 E=/home/builder/fqapp; G=/mnt/d/Documents/Esverde/kindle-android/local/tmp/readest-gate
 T=$(mktemp -d)

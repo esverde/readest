@@ -17,7 +17,7 @@ sed -i -E \
 sed -i 's#Landroid/webkit/WebView;->getCurrentWebViewPackage()#Landroid/webkit/WebViewFactory;->getLoadedPackageInfo()#g' \
   $(grep -rl --include=*.smali 'getCurrentWebViewPackage' smali2)
 python3 $T/readest-haptics.py
-# 墨卓限制：kcompat.G（核对系统签名）/ kcompat.N（说明页），源码 readest-gate/，KPW6-AOSP 上 readest-gate.sh 编成 gate.dex
+# 墨卓限制：kcompat.G（核对系统签名）/ kcompat.N（说明页），源码 readest-gate/，KPW6-OREO 上 readest-gate.sh 编成 gate.dex
 java -jar ~/kwa/sdk/smali/baksmali.jar d $T/readest-gate/gate.dex -o smali2
 M=smali2/com/bilingify/readest/MainActivity.smali
 grep -q '^    .registers 12$' <(sed -n '/^.method public final onCreate(Landroid\/os\/Bundle;)V/,+1p' $M)
